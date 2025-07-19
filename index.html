@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio of Ankita Kashyap - Senior Content & Copy Writer">
+  <title>Ankita Kashyap | Senior Content & Copy Writer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #191c24 0%, #293142 60%, #3c5063 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    }
+    header {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(20,22,38,0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      backdrop-filter: blur(14px);
+    }
+    nav {
+      max-width: 1200px; margin: auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem; font-weight: 800;
+      background: linear-gradient(to right, #6c58ef, #ff8cf7);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-items {
+      display: flex; align-items: center; gap: 1.2rem;
+    }
+    .nav-links {
+      list-style: none; display: flex; gap: 1.3rem; align-items: center;
+    }
+    .nav-links a, .resume-btn-header {
+      text-decoration: none; color: #e0e0e0; font-weight: 500; transition: 0.3s;
+      padding: 0.4rem 1rem; border-radius: 20px;
+      display: block;
+      border: none;
+      background: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .nav-links a:hover, .nav-links .resume-btn-header:hover {
+      background: rgba(255,140,241,0.10); color: #fff;
+    }
+    .resume-btn-header {
+      background: linear-gradient(90deg, #6c58ef, #ff8cf7 90%);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 35px;
+      padding: 0.5em 1.3em;
+      margin-left: 1rem;
+      font-size: 1.03rem;
+      box-shadow: 0 3px 15px 0 rgba(102,126,234,.11);
+      transition: background 0.3s, color 0.3s, transform 0.19s;
+      display: flex; align-items: center;
+    }
+    .resume-btn-header i { margin-right: 0.5em; font-size: 1.15em; }
+    .resume-btn-header:hover, .resume-btn-header:focus {
+      background: linear-gradient(90deg, #9182e7, #ffb3fc 100%);
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 1.2rem;
+      z-index: 1501;
+    }
+    .menu-toggle span {
+      width: 27px;
+      height: 3px;
+      background: #d5b4fa;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.25s;
+      display: block;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5.2rem 2rem 3rem 2rem;
+    }
+    .section-title {
+      font-size: 2.5rem; text-align: center; margin-bottom: 2rem;
+      background: linear-gradient(90deg, #b3aafd, #ffe0fc);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .hero { min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6.5rem 2rem 3rem 2rem;}
+    .hero-content {max-width:900px;margin:auto;}
+    .profile {width:190px;height:190px;margin:0 auto 1.8rem auto;border-radius:50%;
+      background:rgba(255,255,255,0.14);border:4px solid rgba(255,140,241,0.16);
+      box-shadow:0 8px 32px 0 rgba(31,38,135,0.18);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .profile img {width:100%;border-radius: 50%;}
+    h1 {font-size:2.98rem;background:linear-gradient(to right, #ff8cf7, #6c58ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;margin-bottom:0.5rem;letter-spacing:0.3px;}
+    .subtitle {color:#ffe0fc;font-size:1.28rem;margin-bottom:1rem;}
+    .description {max-width:700px;margin:auto;line-height:1.7;font-size:1.13rem;}
+    .glass-card {background:rgba(33,37,58,0.82);box-shadow:0 8px 32px 0 rgba(31,38,135,0.15),0 2px 8px 0 rgba(108,88,239,0.10);
+       backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:2.6rem 2.2rem;border-radius:25px;border:1px solid rgba(255,255,255,0.14);
+       margin:0 auto 2.2rem auto;max-width:510px;text-align:center;}
+    .glass-card ul {list-style:none;padding:0;margin:0.7rem 0 0 0;text-align:center;}
+    .glass-card ul li {padding-bottom:.3rem;color:#e0d7fa;}
+    .exp-container {display:flex;flex-direction:column;align-items:center;gap:1.8rem;}
+    .experience-card {width:100%;max-width:540px;margin:0 auto;
+     background:rgba(33,37,58,0.78);box-shadow:0 4px 32px 0 rgba(108,88,239,0.13);border-radius:18px;
+     border:1.2px solid rgba(255,255,255,0.10);padding:2rem 2rem 1.1rem 2rem;position:relative;text-align:center;}
+    .experience-card:hover {box-shadow:0 10px 28px 0 rgba(255,140,241,0.16);}
+    .role-title {font-weight:700; font-size:1.2rem;letter-spacing:0.1px;
+      background:linear-gradient(90deg,#6c58ef,#ff8cf7 65%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .company {color:#e6a2f2;font-weight:600;font-size:1.03rem;margin:0.1em;letter-spacing:0.07em;}
+    .exp-dates {color:#b8b8b8;font-size:.94rem;margin-bottom:.7rem;display:block;}
+    .exp-description {color:#e5e4ea;font-size:1.04rem;line-height:1.5;margin-bottom:.3em;}
+    .certs-grid, .projects-grid, .skills-grid, .contact-info {width:100%;}
+    .projects-grid, .skills-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.15rem;list-style:none;padding:0;}
+    .certs-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:1.1rem;margin:1.5rem 0 0 0;list-style:none;padding:0;}
+    .certs-grid li, .projects-grid li, .skills-grid li {background:rgba(255,255,255,.11);color:#e0d7fa;border-radius:13px;padding:1rem 1.1rem;text-align:center;}
+    .contact-info {display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:2rem;text-align:center;}
+    .contact-item {background:rgba(255,255,255,0.06);padding:1.4rem;border-radius:11px;box-shadow:0 2px 16px 0 rgba(108,88,239,0.05);}
+    .contact-item a {color:#ffe0fc;text-decoration:none;}
+    .skills-section-group {
+      font-size: 1.16rem;
+      font-weight: 800;
+      padding: 0.65em 0;
+      text-align: center;
+      margin: 1.7em 0 0.7em 0;
+      background: linear-gradient(90deg, #ff8cf7, #6c58ef 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+    }
+    .fade-in { opacity:0; transform: translateY(60px); transition: all 0.8s cubic-bezier(.25,.8,.25,1);}
+    .fade-in.visible { opacity:1; transform: translateY(0);}
+    footer {text-align:center;padding:2.3rem 1rem 1.2rem 1rem;font-size:0.93rem;background:rgba(0,0,0,0.22);color:#aaa;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,0.06);}
+    @media (max-width:700px) {.profile {width:130px;height:130px;} nav {padding: 0.9rem 1rem;} h1 {font-size:2.1rem;} .glass-card, .experience-card {padding:1.1rem 0.85rem;} section{padding:4.2rem 0.7rem;}}
+    @media (max-width: 980px) { nav { padding: 1rem 0.7rem; } }
+    @media (max-width: 768px) {
+      .nav-items { flex-direction: row; }
+      .menu-toggle { display: flex; }
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(30, 26, 48, 0.96);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        border-bottom: 1.5px solid #947ce9;
+        display: none;
+        z-index: 2000;
+        box-shadow: 0 8px 18px 0 rgba(50,50,90,0.14);
+      }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links a, .resume-btn-header {
+        padding: 1.2rem 0;
+        font-size: 1.13rem;
+        border-radius: 0;
+        border-bottom: 1px solid #28244c66;
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+      }
+      .nav-links .resume-btn-header {
+        margin: 0.9rem 0 0.9rem 0;
+        width: calc(100% - 2rem);
+        padding: 0.9em 0;
+        font-size: 1.11rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="particles-js"></div>
+<header>
+  <nav>
+    <div class="logo">Ankita Kashyap</div>
+    <div class="nav-items">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="Ankita_Kashyap_Resume.pdf" download class="resume-btn-header">
+            <i class="bi bi-download"></i>Resume
+          </a>
+        </li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="profile">
+      <!-- Add your image link here -->
+      <img src="https://raw.githubusercontent.com/Ankitakashyap0408/ankita-portfolio/main/ankita_pic.jpeg" alt="Ankita Kashyap">
+    </div>
+    <h1>Ankita Kashyap</h1>
+    <div class="subtitle">Senior Content &amp; Copy Writer<br><span style="font-size:0.91em;color:#e6a2f2;">Noida, Uttar Pradesh, India</span></div>
+    <p class="description">
+      Multi-industry content and copy writer with over 5+ years of expertise in SEO, digital strategy, long and short-form copy, e-commerce product content, blogs, press releases, and script writing. Adept at crafting data-driven narratives for impactful audience engagement and brand growth across versatile formats and platforms.
+    </p>
+  </div>
+</section>
+<section id="about" class="fade-in">
+  <div class="glass-card">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      As a Senior Content &amp; Copy Writer at CBAY Express Technologies, I lead branding and content strategy for the Herbishh Brand, overseeing creative output across all digital and e-commerce platforms. My journey spans editorial direction, SEO optimization, and digital storytelling for brands like Paper Boat, Chicco, Britannia, and VLCC.<br><br>
+      <strong>Core Competencies:</strong>
+      <ul>
+        <li>SEO &amp; Digital Content Strategy</li>
+        <li>E-commerce Content Development (Amazon, Walmart, Flipkart)</li>
+        <li>Blog &amp; Article Writing</li>
+        <li>Press Releases and Script Writing</li>
+        <li>Social Media &amp; Email Campaigns</li>
+        <li>Collaborative Stakeholder Communication</li>
+        <li>Brand Storytelling</li>
+      </ul>
+    </p>
+    <h3 style="margin-top:1.5em;">🎓 Education</h3>
+    <ul>
+      <li>Master of Journalism and Mass Communication, Amity University, Noida (U.P.) | 2017 – 2019</li>
+      <li>Bachelor of Arts (English Honours), Galgotias University, Noida (U.P) | 2014 – 2017</li>
+      <li>Intermediate, Baldwin Academy, Patna (Bihar) | 2014</li>
+      <li>High School, Rockvale Academy, Kalimpong (West Bengal) | 2012</li>
+    </ul>
+  </div>
+</section>
+<section id="experience" class="fade-in">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="exp-container">
+    <div class="experience-card">
+      <div class="role-title">Senior Content &amp; Copy Writer</div>
+      <div class="company">CBAY Express Technologies</div>
+      <span class="exp-dates">March 2024 – Present</span>
+      <p class="exp-description">
+        Spearheaded all content and creative campaigns for Herbishh Brand. Delivered engaging product listings, A+ content, Q&amp;A sections, infographics, and email campaigns. Led blog, website content, press releases, and optimized product visibility with advanced SEO and keyword research tools.
+      </p>
+    </div>
+    <div class="experience-card">
+      <div class="role-title">Content &amp; Copy Writer</div>
+      <div class="company">Paxcom India Pvt. Ltd.</div>
+      <span class="exp-dates">March 2022 – February 2024</span>
+      <p class="exp-description">
+        End-to-end content production for major FMCG and retail brands including Paper Boat, Britannia, VLCC, Hindustan Unilever, and more. Led ideation, client pitches, and delivered various short and long-form digital content and marketing collateral; managed vendor and client relationships.
+      </p>
+    </div>
+    <div class="experience-card">
+      <div class="role-title">Content Writer</div>
+      <div class="company">NutriGlow Cosmetics Pvt. Ltd.</div>
+      <span class="exp-dates">November 2020 – March 2022</span>
+      <p class="exp-description">
+        Drove e-commerce listing success on Amazon and Flipkart, writing compelling product descriptions and blogs. Managed organic digital and website content and delivered SEO-driven campaigns.
+      </p>
+    </div>
+    <div class="experience-card">
+      <div class="role-title">Content Writer</div>
+      <div class="company">Page Traffic</div>
+      <span class="exp-dates">August 2019 – August 2020</span>
+      <p class="exp-description">
+        Created and optimized SEO-focused content for international clients. Produced blogs, articles, social media posts, and infographics to elevate visibility and engagement.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="skills" class="fade-in">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-section-group">Content Writing &amp; Editorial Skills</div>
+  <ul class="skills-grid">
+    <li>Long &amp; Short-form Content Creation</li>
+    <li>SEO Copywriting &amp; Keyword Research</li>
+    <li>E-commerce Product Descriptions (Amazon, Walmart, Flipkart)</li>
+    <li>A+ Content &amp; Infographics</li>
+    <li>Script &amp; Video Writing</li>
+    <li>Press Release Creation</li>
+    <li>Website &amp; Blog Writing</li>
+    <li>Brand Tone &amp; Consistency Development</li>
+    <li>Storytelling &amp; Narrative Crafting</li>
+    <li>Email &amp; Social Media Content</li>
+    <li>Editing, Proofreading &amp; Quality Assurance</li>
+    <li>Client &amp; Stakeholder Communication</li>
+  </ul>
+  <div class="skills-section-group">Digital Marketing &amp; Analytical Skills</div>
+  <ul class="skills-grid">
+    <li>Google Ads, Helium10, SEMrush, Ahrefs</li>
+    <li>Content Strategy &amp; Planning</li>
+    <li>Audience Segmentation &amp; Engagement</li>
+    <li>Campaign Analytics &amp; Reporting</li>
+    <li>Competitive Research</li>
+    <li>Multichannel Marketing</li>
+    <li>Social Listening &amp; Community Management</li>
+    <li>Brand Growth Hacking</li>
+  </ul>
+  <div class="skills-section-group">Creative Tools &amp; Platforms</div>
+  <ul class="skills-grid">
+    <li>WordPress, Shopify, Blogger</li>
+    <li>Canva, Adobe Photoshop Basics</li>
+    <li>MS Office Suite</li>
+    <li>Amazon Seller Central, Walmart Portal</li>
+    <li>MailChimp, HubSpot (Blogging/Email)</li>
+    <li>Quora, Facebook, Instagram Contenting</li>
+  </ul>
+</section>
+<section id="certifications" class="fade-in">
+  <h2 class="section-title">Project Link</h2>
+    <div class="contact-item">
+      <i class="bi bi-file-earmark-person"></i><br>
+      <strong>Projects</strong><br>
+	  <br>
+      <a href="https://docs.google.com/document/d/1vcgfXeg2f10ABf0xlL_qrg7JlAzQGiTr943xIpC9LpY/edit?usp=sharing" download>Click here to see my work !!</a>
+    </div>
+</section>
+<section id="contact" class="fade-in">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-info">
+    <div class="contact-item">
+      <i class="bi bi-envelope"></i><br>
+      <strong>Email</strong><br>
+      <a href="mailto:ankitakashyap0408@gmail.com">ankitakashyap0408@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-telephone"></i><br>
+      <strong>Phone</strong><br>
+      <a href="tel:+917678499625">+91 7678499625</a>
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-linkedin"></i><br>
+      <strong>LinkedIn</strong><br>
+      <a href="https://linkedin.com/in/ankita-kashyap-1b7a1817b" target="_blank">ankita-kashyap-1b7a1817b</a>
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-geo-alt"></i><br>
+      <strong>Location</strong><br>
+      Noida, Uttar Pradesh, India
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-file-earmark-person"></i><br>
+      <strong>Resume</strong><br>
+      <a href="Ankita_Kashyap_Resume.pdf" download>📄 Download Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+<footer>
+  &copy; 2025 Ankita Kashyap. All rights reserved.<br>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 62 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.10 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 120,
+        color: "#ffe0fc",
+        opacity: 0.09,
+        width: 1
+      },
+      move: { enable: true, speed: 1 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" }
+      },
+      modes: {
+        repulse: { distance: 100 }
+      }
+    },
+    retina_detect: true
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
+    });
+    navLinks.addEventListener('click', function(e){
+      if(e.target.tagName==="A" && window.innerWidth<=768) {
+        navLinks.classList.remove('show');
+      }
+    });
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const reveal = () => {
+      for(const el of fadeEls) {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 40) el.classList.add('visible');
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  });
+</script>
+</body>
+</html>
